@@ -5,7 +5,7 @@
 
 number = int(input('Input any number: '))
 
-for i in range(2, number):
+for i in range(2, number + 1):
     if number % i == 0:
         print(f'The min divider of number {number} is {i}')
         break
