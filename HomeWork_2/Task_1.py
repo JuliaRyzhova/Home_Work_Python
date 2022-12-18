@@ -1,18 +1,15 @@
-# Напишите программу, которая принимает на вход вещественное число и показывает сумму его цифр.
+# Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.
 
 # Пример:
 
-#  6782 -> 23
-#  0,56 -> 11
+# - пусть N = 4, тогда [ 1, 2, 6, 24 ] (1, 1*2, 1*2*3, 1*2*3*4)
 
-number = float(input('Введите вещественное число: '))
-fraction = int(number % 1 * 100)  # Дробную часть числа выводим в отдельную переменную
-number = int(number)
-sum = 0
+number = int(input('Input any number: '))
+result_list = []
+res = 1
 
-while number != 0 or fraction != 0:
-    sum += fraction % 10 + number % 10
-    number //= 10
-    fraction //= 10
+for i in range(1, number + 1):
+    res *= i
+    result_list.append(res)
 
-print(f'Сумма цифр числа = {sum}')
+print(result_list)
