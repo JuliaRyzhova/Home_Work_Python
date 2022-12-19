@@ -6,4 +6,4 @@ sum = 0
 for i in range(2, number + 1, 2):
     sum += i
 
-print(f'The sum of positive numbers in range from 1 to {number} is {sum}')
+print(f'The sum of even numbers in range from 1 to {number} is {sum}')
