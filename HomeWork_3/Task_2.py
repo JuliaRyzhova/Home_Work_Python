@@ -6,8 +6,8 @@
 
 import random
 
-size_list = int(input("Input the size of list: ")) - 1
-list_numbers = [size_list]
+size_list = int(input("Input the size of list: "))
+list_numbers = []
 for el in range(size_list):
     list_numbers.append(random.randint(0, 10))
 

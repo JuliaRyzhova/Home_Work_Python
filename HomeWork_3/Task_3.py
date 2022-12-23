@@ -5,8 +5,8 @@
 
 import random
 # Генерируем список случайных вещественных чисел
-size_list = int(input("Input the size of list: ")) - 1
-list_numbers = [size_list]
+size_list = int(input("Input the size of list: "))
+list_numbers = []
 for el in range(size_list):
     list_numbers.append(round(random.uniform(0, 10), 2))
 
