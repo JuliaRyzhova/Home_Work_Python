@@ -15,10 +15,7 @@ print(list_numbers)
 
 multipl_items = []
 for i in range(size_list):
-    if i < size_list // 2:
+    if i <= size_list // 2:
         multipl_items.append(list_numbers[i] * list_numbers[-1 -i])
-    else:
-        multipl_items.append(list_numbers[i] * list_numbers[i])
-        break
 
 print(multipl_items)
