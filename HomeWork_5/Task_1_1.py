@@ -20,7 +20,7 @@ bonbon = 120
 max_bon = 28
 min_bon = 1
 
-def step_of_play(candies):
+def step_of_play(candies, min_bon, max_bon):
     if candies >= max_bon:
         step = int(input(f'Вы можете взять от {min_bon} до {max_bon} конфет: '))
         candies -= step
@@ -34,14 +34,14 @@ def play(player_1, player_2, candies, function):
         if player_1:
             print('Ход первого игрока: ')
             print(f'На столе {candies} конфет(ы)')
-            step = step_of_play(candies)
+            step = step_of_play(candies, min_bon, max_bon)
             candies -= step
             print()
             player_1, player_2 = False, True
         elif player_2:
             print('Ход второго игрока: ')
             print(f'На столе {candies} конфет(ы)')
-            step = step_of_play(candies)
+            step = step_of_play(candies, min_bon, max_bon)
             candies -= step
             print()
             player_2, player_1 = False, True
