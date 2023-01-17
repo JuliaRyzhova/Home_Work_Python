@@ -36,18 +36,3 @@ decompose_number(number)
 
 
 
-#     for (int i = startValue; i < endValue; i++)
-# {   
-#     if (i==2) sum+=i;
-#     for (int j = 2;j < i;j++)
-#     {
-#         if(i%j==0 && i%1 ==0)
-#         {
-#             break;
-#         }
-#         else if (i==j+1)
-#         {
-#             sum+=i;
-#         }
-#     }
-# }
