@@ -7,8 +7,10 @@ with open('HomeWork_6/data_for_task2.txt', mode='r') as data:
         stroka += el
 
 
-lst_num = list(map(int, filter(lambda x: x.isdigit(), stroka)))
-lst_str = list(filter(lambda x: not x.isdigit(), stroka))
+lst = list(map(str, stroka.split(',')))
+
+lst_num = list(map(int, filter(lambda x: x.isdigit(), lst)))
+lst_str = list(filter(lambda x: not x.isdigit(), lst))
 
 
 print(f'Исходные данные: {stroka}')
