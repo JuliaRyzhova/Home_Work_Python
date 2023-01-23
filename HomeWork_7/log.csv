@@ -1,0 +1,49 @@
+20:03; Input operation; 1
+20:03; Input operation; 2
+20:03; Try searching contact; Даша20:03; Input operation; 2
+20:03; Try searching contact; Олег20:04; Input operation; 2
+20:04; Try searching contact; Сергей20:04; Input operation; 2
+20:08; Try searching contact; Даша09:55; Input operation; 2
+09:55; Try searching contact; Сергей
+09:58; Input operation; & C:/Users/16-jl/AppData/Local/Programs/Python/Python311/python.exe c:/Users/16-jl/Study/Pythonics/HomeWorks/HomeWork_7/main.py
+09:58; Input operation; 2
+09:58; Try searching contact; Альбина
+09:58; Input operation; clear
+10:39; Input operation; 1
+10:41; Input operation; 1
+10:42; Input operation; 1
+10:44; Input operation; 1
+10:44; Input operation; 1
+10:44; Input operation; 1
+10:45; Input operation; 1
+10:46; Input operation; 1
+10:46; Input operation; 1
+10:47; Input operation; 1
+10:48; Input operation; 1
+10:51; Input operation; 3
+10:51; Surname input; Булкина
+10:51; Name input; Оксана
+10:51; Phone input; 957473
+10:51; Description input; Музыка
+10:52; Input operation; 3
+10:52; Surname input; Дерябкин
+10:53; Name input; Игорь
+10:53; Phone input; 95763685
+10:53; Description input; Футбол
+10:56; Input operation; 3
+10:56; Surname input; Ложкин
+10:56; Name input; Палел
+10:56; Phone input; 6592048
+10:56; Description input; Работа
+10:57; Input operation; 4
+10:57; Input operation; 3
+10:57; Surname input; Денежникова
+10:57; Name input; Ирина
+10:57; Phone input; 9575383
+10:57; Description input; Музыка
+10:57; Input operation; 3
+10:58; Surname input; Старовойтов 
+10:58; Name input; Максим
+10:58; Phone input; 957362
+10:58; Description input; Футбол
+01/23/23 10:59:51; Input operation; 1
