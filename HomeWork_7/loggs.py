@@ -56,15 +56,13 @@ def search_contact_logger(data):
                    .format(time, data))
         
 
-def showDB_v1_logger(data):
+def showDB_v1_logger():
     time = dt.now().strftime('%D %H:%M:%S')
     with open('HomeWork_7/log.csv', encoding='utf8', newline='', mode='a') as file:
-        file.write('{}; Show data in line; {}\n'
-                   .format(time, data))
+        file.write('{time}; Show data in line;\n')
         
 
-def showDB_v2_logger(data):
+def showDB_v2_logger():
     time = dt.now().strftime('%D %H:%M:%S')
     with open('HomeWork_7/log.csv', encoding='utf8', newline='', mode='a') as file:
-        file.write('{}; Show data in column; {}\n'
-                   .format(time, data))
+        file.write('{time}; Show data in column;\n')
