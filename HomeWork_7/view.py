@@ -3,29 +3,32 @@ import Input_data as input
 import models as mod
 
 operation = ''
-phone=''
+phone = ''
+
 
 def run():
     global phone
     operation = input.get_operation()
     log.operation_logger(operation)
     if operation == '1':
-        view_model = input.get_show_option()
-        if view_model == '4':
+        choose_view_model = input.get_show_option()
+        if choose_view_model == '4':
             mod.show_data_inline()
+            log.showDB_v1_logger()
             run()
-        if view_model == '5':
+        if choose_view_model == '5':
             mod.show_data_incolumn()
+            log.showDB_v2_logger()
             run()
         else:
             print('Такой операции нет. Давай попробуем еще раз!')
             run()
     if operation == '2':
         searching_req = input.get_searching_data()
+        print('')
         mod.searching_contact(searching_req)
         log.search_contact_logger(searching_req)
         run()
-
     if operation == '3':
         surname = input.get_surname()
         log.surname_logger(surname)
@@ -41,11 +44,8 @@ def run():
         print('Новый контакт добавлен!')
         print('______________________________________')
         mod.searching_contact(phone)
+        log.create_new_contact_logger(phone)
         run()
     else:
         print('Такой операции нет. Давай попробуем еще раз!')
         run()
-        
-
-
-
