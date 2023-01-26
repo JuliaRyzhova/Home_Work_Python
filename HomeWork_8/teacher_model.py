@@ -24,6 +24,14 @@ def check_surname_student(lesson, surname_student):
             return False
 
 
+def check_mark(mark):
+    """Проверка правильности оценки"""
+    if mark in ['2', '3', '4', '5']:
+        return True
+    else:
+        return False
+
+
 def add_assessment(lesson, surname_student, mark):
     """Добавление новой оценки"""
     with open('HomeWork_8/db.csv', encoding='utf8', newline='', mode='r') as csvfile:
@@ -31,28 +39,46 @@ def add_assessment(lesson, surname_student, mark):
         data = list(data)
         for line in data:
             if lesson in line and surname_student in line:
-                # print(type(mark))
                 line[3] = (line[3] + '-' + mark)
-                # print(type(line[3]))
-                # print(line[3])
                 writer = csv.writer(
                     open('HomeWork_8/db.csv', encoding='utf8', newline='', mode='w'))
                 writer.writerows(data)
 
 
 def show_result_adding(lesson, surname_student):
+    """Вывод оценок ученика после проставления новой оценки"""
     with open('HomeWork_8/db.csv', encoding='utf8', newline='', mode='r') as csvfile:
         data = csv.reader(csvfile,  delimiter=',')
         for line in data:
             if surname_student in line and lesson in line:
-                # print('{}\nУченик: {}\nОценки: {}'
-                #       .format(''.join(line[0]), ''.join(line[1]), ''.join(line[3])))
-                # print('______________________________________')
-                print(f"{''.join(line[0])}\nУченик: {''.join(line[1])} {''.join(line[2])}\nОценки: {''.join(line[3])}")
+                print(
+                    f"{''.join(line[0])}\nУченик: {''.join(line[1])} {''.join(line[2])}\nОценки: {''.join(line[3])}")
                 print('______________________________________')
 
-# les = 'Математика'
-# user = 'Захарова'
-# ocenka = '3'
 
-# check_surname_student(les, user)
+def show_list_lessons():
+    """Формирование списка предметов"""
+    with open('HomeWork_8/db.csv', encoding='utf-8', newline='', mode='r') as f:
+        data = csv.reader(f,  delimiter=',')
+        data = list(data)
+        lst = []
+        print('Список предметов:')
+        for line in data[1:]:
+            lst.append(line[0])
+        lst = set(lst)
+        print('\n'.join(lst))
+
+
+def show_list_students():
+    """Формирование списка учеников"""
+    with open('HomeWork_8/db.csv', encoding='utf-8', newline='', mode='r') as f:
+        data = csv.reader(f,  delimiter=',')
+        data = list(data)
+        count_students = 13
+        lst = []
+        print()
+        print('Список учеников:')
+        for line in data[1:count_students + 1]:
+            lst.append(line[1])
+            lst.append(line[2])
+            print(line[1], line[2])

@@ -12,7 +12,7 @@ def chech_your_surname(surname_student):
                 return True
         if count == 0:
             return False
- 
+
 
 def show_diary(surname_student):
     """Вывод всех оценок ученика"""
@@ -26,6 +26,3 @@ def show_diary(surname_student):
                 print('{}\nВаши оценки: {}'
                       .format(''.join(line[0]), ''.join(line[3])))
                 print('______________________________________')
-
-
-
