@@ -40,7 +40,7 @@ def run():
                     'Не бывает таких оценок\nМожно поставить 2, 3, 4 или 5 \nПопробуйте еще раз!')
                 print()
                 mark = get_assessment()
-                add_mark_logger(mark)
+                add_mark_logger()
             input_mark_logger(lesson, surname, mark)
             add_assessment(lesson, surname, mark)
             add_mark_logger()
