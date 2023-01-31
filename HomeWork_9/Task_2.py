@@ -8,6 +8,7 @@ bot = Bot(token=TG_TOKEN)
 
 updater = Updater(token=TG_TOKEN)
 dispatcher = updater.dispatcher
+STATES = (0,1,2)
 
 total_sweet = 120
 take_sweet = 0
@@ -24,7 +25,7 @@ def start_game(update, context):
         "Первый ход определяется жеребьевкой. За один ход можно забрать не более чем 28 конфет.\n"
         "Победитель - тот, кто оставил на столе 0 конфет!!\n"
         "Для жеребьевки кликни сюда -> /draw")
-    return first_step
+    return STATES[0]
 
 
 def first_step(update, context):
@@ -33,12 +34,12 @@ def first_step(update, context):
         context.bot.send_message(
             update.effective_chat.id, "Ты ходишь первый. Поехали!")
         human_step(update, context)
-        return human_step
+        return STATES[2]
     else:
         context.bot.send_message(
             update.effective_chat.id, "Бот ходит первый")
         bot_step(update, context)
-        return bot_step
+        return STATES[1]
 
 
 def human_step(update, context):
@@ -57,6 +58,7 @@ def human_step(update, context):
     human_sweet += take_sweet
     if total_sweet > 0:
         bot_step(update, context)
+        return STATES[1]
     else:
         context.bot.send_message(
             update.effective_chat.id, 'Ты победил!!!!!!')
@@ -77,6 +79,7 @@ def bot_step(update, context):
     bot_sweet += take_sweet
     if total_sweet > 0:
         human_step(update, context)
+        return STATES[2]
     else:
         context.bot.send_message(
             update.effective_chat.id, 'Бот выйграл!!!!!!!')
@@ -94,9 +97,9 @@ bot_step_handler = MessageHandler(None, bot_step)
 cancel_handler = CommandHandler('cancel', cancel)
 
 conv_handler = ConversationHandler(entry_points=[start_game_handler],
-                                   states={first_step: [first_step_handler],
-                                           human_step: [bot_step_handler],
-                                           bot_step: [human_step_handler]},
+                                   states={STATES[0]: [first_step_handler],
+                                           STATES[1]: [bot_step_handler],
+                                           STATES[2]: [human_step_handler]},
                                    fallbacks=[cancel_handler])
 
 dispatcher.add_handler(conv_handler)
