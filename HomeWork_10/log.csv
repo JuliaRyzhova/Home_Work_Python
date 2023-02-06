@@ -1,0 +1,9 @@
+02/06/23 13:45:50; User id = 490234260; full name: Юлия Р; Bot is started by user
+02/06/23 13:45:55; User id = 490234260; full name : Юлия Р; input example: 12 + 3*3 + 44/5
+02/06/23 13:45:55; User id = 490234260; full name : Юлия Р; got the result: 29.8
+02/06/23 13:45:55; User id = 490234260; full name: Юлия Р; called the command "Menu"
+02/06/23 13:45:58; User id = 490234260; full name: Юлия Р; called the command "Next"
+02/06/23 13:46:03; User id = 490234260; full name : Юлия Р; input example: 12 + 3*3 - 44/5
+02/06/23 13:46:03; User id = 490234260; full name : Юлия Р; got the result: 12.2
+02/06/23 13:46:03; User id = 490234260; full name: Юлия Р; called the command "Menu"
+02/06/23 13:46:05; User id = 490234260; full name: Юлия Р; called the command "Cancel", Bot is OFF"
